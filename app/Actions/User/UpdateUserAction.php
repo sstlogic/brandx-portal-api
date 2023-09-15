@@ -17,7 +17,8 @@ class UpdateUserAction extends BaseAction
     public function __construct(
         private UserRepository      $userRepository,
         private AttributeRepository $attributeRepository
-    ) {}
+    ) {
+    }
 
     public function execute(User $user, array $data): ?BookedUser
     {
@@ -44,7 +45,7 @@ class UpdateUserAction extends BaseAction
 
         $user = $this->userRepository->update($this->user->external_id, $data);
 
-        if (! $user) {
+        if (!$user) {
             return null;
         }
 
@@ -58,7 +59,7 @@ class UpdateUserAction extends BaseAction
             'organisation' => (bool) $user->organization,
         ]);
 
-        Mail::to($this->user->email)->send(new UserUpdatedMail($this->user));
+        // Mail::to($this->user->email)->send(new UserUpdatedMail($this->user));
 
         return $user;
     }
@@ -83,7 +84,7 @@ class UpdateUserAction extends BaseAction
                 'attributeValue' => $attribute,
             ];
         })->reject(function ($array) {
-            return ! $array['attributeId'];
+            return !$array['attributeId'];
         })->all();
     }
 

@@ -30,6 +30,7 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, UpdateUserAction $action, User $user)
     {
+        // return response(json_encode($request->toArray()), 200);
         $action->execute($user, $request->validated());
 
         return response('', 200);

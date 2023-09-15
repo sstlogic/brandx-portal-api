@@ -11,7 +11,8 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email', new UniqueEmailRule],
+            // 'email' => ['required', 'string', 'email', new UniqueEmailRule],
+            'email' => ['required', 'string'],
             'first_name' => ['required', 'string'],
             'last_name' => ['sometimes', 'nullable', 'string'],
             'phone' => ['sometimes', 'string', 'nullable'],
@@ -19,12 +20,18 @@ class UpdateUserRequest extends FormRequest
             'organisation_name' => ['sometimes', 'string', 'nullable', Rule::requiredIf($this->isForOrganisation())],
             'organisation_type' => ['sometimes', 'string', 'nullable', Rule::requiredIf($this->isForOrganisation())],
             'organisation_abn' => ['sometimes', 'string', 'nullable', Rule::requiredIf($this->isForOrganisation())],
-            'artform' => ['required', 'string', 'nullable'],
-            'address' => ['required', 'string'],
-            'suburb' => ['required', 'string'],
-            'state' => ['required', 'string'],
-            'postcode' => ['required', 'string'],
-            'country' => ['required', 'string'],
+            'artform' => ['string', 'nullable'],
+            'address' => ['string', 'nullable'],
+            'suburb' => ['string', 'nullable'],
+            'state' => ['string', 'nullable'],
+            'postcode' => ['string', 'nullable'],
+            'country' => ['string', 'nullable'],
+            // 'artform' => ['required', 'string', 'nullable'],
+            // 'address' => ['required', 'string'],
+            // 'suburb' => ['required', 'string'],
+            // 'state' => ['required', 'string'],
+            // 'postcode' => ['required', 'string'],
+            // 'country' => ['required', 'string'],
             'insurance' => ['filled', 'string'],
         ];
     }

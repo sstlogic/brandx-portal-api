@@ -60,49 +60,48 @@ if (!function_exists('uuidResourceRoute')) {
     }
 }
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/user', fn (Request $request) => new UserResource($request->user()));
+Route::put('/users/{user:uuid}', [UserController::class, 'update']);
+// Route::middleware('auth:sanctum')->group(function () {
+Route::get('/user', fn (Request $request) => new UserResource($request->user()));
+Route::apiResource('users', UserController::class)->only(['show']);
 
-    Route::apiResource('users', UserController::class)->only(['show']);
-    Route::get('/user/booked', [UserController::class, 'asBookedUser']);
+Route::get('/user/booked', [UserController::class, 'asBookedUser']);
 
-    Route::get('/payment-methods/setup', [PaymentMethodsController::class, 'setup']);
-    Route::get('/payment-methods/default', [PaymentMethodsController::class, 'default']);
-    Route::post('/payment-methods/default', [PaymentMethodsController::class, 'setDefault']);
-    Route::apiResource('payment-methods', PaymentMethodsController::class);
+Route::get('/payment-methods/setup', [PaymentMethodsController::class, 'setup']);
+Route::get('/payment-methods/default', [PaymentMethodsController::class, 'default']);
+Route::post('/payment-methods/default', [PaymentMethodsController::class, 'setDefault']);
+Route::apiResource('payment-methods', PaymentMethodsController::class);
 
-    Route::resource('subscriptions', SubscriptionController::class);
+Route::resource('subscriptions', SubscriptionController::class);
 
-    Route::delete('/subscription', CancelSubscriptionController::class);
-    Route::post('/subscription/resume', ResumeSubscriptionController::class);
+Route::delete('/subscription', CancelSubscriptionController::class);
+Route::post('/subscription/resume', ResumeSubscriptionController::class);
 
-    Route::get('/users/{user:uuid}/subscription-price', [SubscriptionController::class, 'price']);
+Route::get('/users/{user:uuid}/subscription-price', [SubscriptionController::class, 'price']);
 
-    Route::apiResource('/booked/reservations', ReservationController::class)->names(
-        [
-            'index' => 'booked.reservations.index',
-            'store' => 'booked.reservations.store',
-            'show' => 'booked.reservations.show',
-            'update' => 'booked.reservations.update',
-            'destroy' => 'booked.reservations.destroy',
-        ]
-    );
-    Route::post('/reservations/update', UpdateReservationRequestController::class);
+Route::apiResource('/booked/reservations', ReservationController::class)->names(
+    [
+        'index' => 'booked.reservations.index',
+        'store' => 'booked.reservations.store',
+        'show' => 'booked.reservations.show',
+        'update' => 'booked.reservations.update',
+        'destroy' => 'booked.reservations.destroy',
+    ]
+);
+Route::post('/reservations/update', UpdateReservationRequestController::class);
 
-    uuidResourceRoute('reservations', PendingReservationsController::class);
+uuidResourceRoute('reservations', PendingReservationsController::class);
 
-    Route::get('/users/{user:uuid}/pending-reservations', GetPendingReservationsController::class)
-        ->name('users.pending-reservations');
+Route::get('/users/{user:uuid}/pending-reservations', GetPendingReservationsController::class)
+    ->name('users.pending-reservations');
 
-    Route::get('users/{user:uuid}/checkout/details', GetCheckoutDetailsController::class)->name('checkout.details');
-    Route::post('users/{user:uuid}/checkout/payment', CheckoutPaymentController::class)->name(
-        'checkout.payment'
-    );
+Route::get('users/{user:uuid}/checkout/details', GetCheckoutDetailsController::class)->name('checkout.details');
+Route::post('users/{user:uuid}/checkout/payment', CheckoutPaymentController::class)->name(
+    'checkout.payment'
+);
 
-    Route::post('empty-cart', EmptyCartController::class);
-
-    Route::put('/users/{user:uuid}', [UserController::class, 'update']);
-});
+Route::post('empty-cart', EmptyCartController::class);
+// });
 
 Route::post('/users', [UserController::class, 'store']);
 
