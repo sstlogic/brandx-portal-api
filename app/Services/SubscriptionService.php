@@ -17,16 +17,24 @@ class SubscriptionService
 
     public function getPriceAmount(User $user, $bookedUser)
     {
+        try {
+            $userBooked = json_decode(json_encode($bookedUser), true);
+            $account_type =  $userBooked['account_type'];
 
-        return $bookedUser;
-        if ($user->organisation) {
-            return $this->organisation()['price'];
-        }
-        if ($user->organisation) {
+            if ($account_type == "Arts_Organisation") {
+                return $this->organisation()['price'];
+            }
+            if ($account_type == "Artist") {
+                return $this->individual()['price'];
+            }
+
+            if ($account_type == "General_Public") {
+                return $this->generalPublic()['price'];
+            }
+        } catch (\Throwable $th) {
             return $this->generalPublic()['price'];
         }
-
-        return $this->individual()['price'];
+        return $this->generalPublic()['price'];
     }
 
     public function individual()
@@ -41,6 +49,6 @@ class SubscriptionService
 
     public function generalPublic()
     {
-        return config('brandx.subscriptions.artist-pass_organisation');
+        return config('brandx.subscriptions.artist-pass_general_public');
     }
 }
