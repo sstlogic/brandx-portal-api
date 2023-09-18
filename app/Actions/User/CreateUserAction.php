@@ -22,6 +22,7 @@ class CreateUserAction extends BaseAction
         return $this->createBookedUser();
     }
 
+    // private function createBookedUser(): ?array
     private function createBookedUser(): ?BookedUser
     {
         $data = [
@@ -33,10 +34,10 @@ class CreateUserAction extends BaseAction
             "userName" => $this->data->get('email'),
             "timezone" => "Australia/Sydney",
             // "phone" => $this->data->get('phone'),
-            // 'customAttributes' => $this->attributes(),
-            // 'organization' => $this->data->get('organisation_name'),
+            'customAttributes' => $this->attributes(),
+            'organization' => $this->data->get('organisation_name'),
         ];
-
+        // return $data;
         $user = $this->userRepository->create($data);
 
         if (!$user) {
@@ -60,8 +61,14 @@ class CreateUserAction extends BaseAction
             'marketing' => $this->data->get('updates'),
             'insurance' => $this->data->get('insurance'),
             'country' => $this->data->get('country'),
-        ];
 
+            'account_type' =>  $this->data->get('account_type'),
+            'hear_from_us' =>  $this->data->get('hear_from_us'),
+            'role_in_org' =>  $this->data->get('role_in_org'),
+            'accurate' =>  $this->data->get('accurate'),
+            'website' =>  $this->data->get('website'),
+        ];
+        // return $attributes;
         return collect($attributes)
             ->map(function ($attribute, $key) {
                 return [

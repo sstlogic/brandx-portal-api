@@ -21,6 +21,8 @@ class UserController extends Controller
     public function store(CreateUserRequest $request, CreateUserAction $action)
     {
         $user = $action->execute($request->validated());
+
+        return response($user, 200);
     }
 
     public function show(UserRepository $repository, User $user)
@@ -31,9 +33,9 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, UpdateUserAction $action, User $user)
     {
         // return response(json_encode($request->toArray()), 200);
-        $action->execute($user, $request->validated());
+        $bookedUser = $action->execute($user, $request->validated());
 
-        return response('', 200);
+        return response($bookedUser, 200);
     }
 
     public function destroy(User $user)

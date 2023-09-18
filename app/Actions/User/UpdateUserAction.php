@@ -76,6 +76,11 @@ class UpdateUserAction extends BaseAction
             'org_abn' => $this->data->get('organisation_abn'),
             'insurance' => $this->data->get('insurance'),
             'country' => $this->data->get('country'),
+            'account_type' =>  $this->data->get('account_type'),
+            'hear_from_us' =>  $this->data->get('hear_from_us'),
+            'role_in_org' =>  $this->data->get('role_in_org'),
+            'accurate' =>  $this->data->get('accurate'),
+            'website' =>  $this->data->get('website'),
         ];
 
         return collect($attributes)->map(function ($attribute, $key) {

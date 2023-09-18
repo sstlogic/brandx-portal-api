@@ -15,10 +15,15 @@ class SubscriptionService
         return $this->individual()['price_id'];
     }
 
-    public function getPriceAmount(User $user)
+    public function getPriceAmount(User $user, $bookedUser)
     {
+
+        return $bookedUser;
         if ($user->organisation) {
             return $this->organisation()['price'];
+        }
+        if ($user->organisation) {
+            return $this->generalPublic()['price'];
         }
 
         return $this->individual()['price'];
@@ -30,6 +35,11 @@ class SubscriptionService
     }
 
     public function organisation()
+    {
+        return config('brandx.subscriptions.artist-pass_organisation');
+    }
+
+    public function generalPublic()
     {
         return config('brandx.subscriptions.artist-pass_organisation');
     }

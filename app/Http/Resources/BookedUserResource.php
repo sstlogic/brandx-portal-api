@@ -32,6 +32,11 @@ class BookedUserResource extends JsonResource
             'postcode' => $this->getAttribute('postcode'),
             'phone' => $this->phoneNumber,
             'insurance' => $this->getAttribute('insurance'),
+            'account_type' => $this->getAttribute('account_type'),
+            'hear_from_us' => $this->getAttribute('hear_from_us'),
+            'role_in_org' => $this->getAttribute('role_in_org'),
+            'accurate' => $this->getAttribute('accurate'),
+            'website' => $this->getAttribute('website'),
         ];
     }
 }

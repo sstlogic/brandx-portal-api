@@ -26,13 +26,19 @@ class UpdateUserRequest extends FormRequest
             'state' => ['string', 'nullable'],
             'postcode' => ['string', 'nullable'],
             'country' => ['string', 'nullable'],
+            'insurance' => ['filled', 'string'],
+            //new field
+            'account_type' => ['string', 'nullable'],
+            'hear_from_us' => ['string', 'nullable'],
+            'role_in_org' => ['string', 'nullable'],
+            'accurate' => ['string', 'nullable'],
+            'website' => ['string', 'nullable'],
             // 'artform' => ['required', 'string', 'nullable'],
             // 'address' => ['required', 'string'],
             // 'suburb' => ['required', 'string'],
             // 'state' => ['required', 'string'],
             // 'postcode' => ['required', 'string'],
             // 'country' => ['required', 'string'],
-            'insurance' => ['filled', 'string'],
         ];
     }
 

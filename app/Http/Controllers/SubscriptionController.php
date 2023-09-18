@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\NewArtistPassMail;
+use App\Booked\Repositories\UserRepository;
 use App\Models\User;
 use App\Services\SubscriptionService;
 use Illuminate\Http\JsonResponse;
@@ -49,8 +50,9 @@ class SubscriptionController extends Controller
         //
     }
 
-    public function price(User $user, SubscriptionService $service)
+    public function price(User $user, SubscriptionService $service, UserRepository $repository)
     {
-        return $service->getPriceAmount($user);
+        $bookedUser = $repository->find($user->external_id);
+        return $service->getPriceAmount($user, $bookedUser);
     }
 }

@@ -13,16 +13,16 @@ class AttributeRepository extends BaseRepository
 
     public function userAttributes(): Collection
     {
-        return Cache::remember('booked:user:attributes', now()->addHour(), function () {
-            return $this->client->getCategoryAttributes(static::USER_CATEGORY);
-        });
+        // return Cache::remember('booked:user:attributes', now()->addHour(), function () {
+        return $this->client->getCategoryAttributes(static::USER_CATEGORY);
+        // });
     }
 
     public function resourceAttributes(): Collection
     {
-        return Cache::remember('booked:reservations:attributes', now()->addHour(), function () {
-            return $this->client->getCategoryAttributes(static::RESERVATION_CATEGORY);
-        });
+        // return Cache::remember('booked:reservations:attributes', now()->addHour(), function () {
+        return $this->client->getCategoryAttributes(static::RESERVATION_CATEGORY);
+        // });
     }
 
     public function userAttributeId(string $attribute)
