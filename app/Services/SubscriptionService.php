@@ -28,13 +28,10 @@ class SubscriptionService
                 return $this->individual()['price'];
             }
 
-            if ($account_type == "General_Public") {
-                return $this->generalPublic()['price'];
-            }
+            return $this->individual()['price'];
         } catch (\Throwable $th) {
-            return $this->generalPublic()['price'];
+            return $this->individual()['price'];
         }
-        return $this->generalPublic()['price'];
     }
 
     public function individual()
@@ -47,8 +44,8 @@ class SubscriptionService
         return config('brandx.subscriptions.artist-pass_organisation');
     }
 
-    public function generalPublic()
-    {
-        return config('brandx.subscriptions.artist-pass_general_public');
-    }
+    // public function generalPublic()
+    // {
+    //     return config('brandx.subscriptions.artist-pass_general_public');
+    // }
 }
