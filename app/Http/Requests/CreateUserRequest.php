@@ -17,7 +17,7 @@ class CreateUserRequest extends FormRequest
             'last_name' => ['sometimes', 'nullable', 'string'],
             'password' => ['required', 'string', Password::default()],
 
-            'phone' => ['sometimes', 'string', 'nullable'],
+            'wk_ph' => ['sometimes', 'string', 'nullable'],
             'type' => [Rule::in(['individual', 'organisation'])],
             'organisation_name' => ['sometimes', 'string', 'nullable', Rule::requiredIf($this->isForOrganisation())],
             'organisation_type' => ['sometimes', 'string', 'nullable', Rule::requiredIf($this->isForOrganisation())],
@@ -30,10 +30,10 @@ class CreateUserRequest extends FormRequest
             'country' => ['string', 'nullable'],
             'tcs' => ['required', 'boolean'],
             'updates' => ['filled', 'boolean'],
-            'insurance' => ['filled', 'string'],
+            'insurance' => ['string', 'nullable'],
 
             'account_type' => ['string', 'nullable'],
-            'hear_from_us' => ['string', 'nullable'],
+            'promo' => ['string', 'nullable'],
             'role_in_org' => ['string', 'nullable'],
             'accurate' => ['string', 'nullable'],
             'website' => ['string', 'nullable'],

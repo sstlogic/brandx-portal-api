@@ -61,9 +61,9 @@ class CreateUserAction extends BaseAction
             'marketing' => $this->data->get('updates'),
             'insurance' => $this->data->get('insurance'),
             'country' => $this->data->get('country'),
-
+            'wk_ph' => $this->data->get('wk_ph'),
             'account_type' =>  $this->data->get('account_type'),
-            'hear_from_us' =>  $this->data->get('hear_from_us'),
+            'promo' =>  $this->data->get('promo'),
             'role_in_org' =>  $this->data->get('role_in_org'),
             'accurate' =>  $this->data->get('accurate'),
             'website' =>  $this->data->get('website'),
