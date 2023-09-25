@@ -18,10 +18,11 @@ class UserController extends Controller
         //
     }
 
-    public function store(CreateUserRequest $request, CreateUserAction $action)
+    public function store(CreateUserRequest $request, CreateUserAction $action, UserRepository $repository)
     {
         $user = $action->execute($request->validated());
-
+        $bookedUser = $repository->find($user->id);
+        $user->customAttributes = new BookedUserResource($bookedUser);
         return response($user, 200);
     }
 
@@ -30,10 +31,12 @@ class UserController extends Controller
         $bookedUser = $repository->find($user->external_id);
     }
 
-    public function update(UpdateUserRequest $request, UpdateUserAction $action, User $user)
+    public function update(UpdateUserRequest $request, UpdateUserAction $action, User $user, UserRepository $repository)
     {
         // return response(json_encode($request->toArray()), 200);
         $bookedUser = $action->execute($user, $request->validated());
+        $bookedUser_ = $repository->find($user->external_id);
+        $bookedUser->customAttributes = new BookedUserResource($bookedUser_);
 
         return response($bookedUser, 200);
     }

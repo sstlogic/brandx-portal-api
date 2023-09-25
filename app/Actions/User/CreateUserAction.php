@@ -22,7 +22,6 @@ class CreateUserAction extends BaseAction
         return $this->createBookedUser();
     }
 
-    // private function createBookedUser(): ?array
     private function createBookedUser(): ?BookedUser
     {
         $data = [

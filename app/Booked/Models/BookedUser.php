@@ -34,7 +34,7 @@ class BookedUser extends BookedModel
     {
         $expiry = $this->attributes()->where('label', 'expiry_date')->first();
 
-        if (! $expiry) {
+        if (!$expiry) {
             return null;
         }
 
@@ -60,4 +60,9 @@ class BookedUser extends BookedModel
     {
         return $this->getAttribute('art_form');
     }
+
+    // public function accountType(): ?string
+    // {
+    //     return $this->getAttribute('account_type');
+    // }
 }
