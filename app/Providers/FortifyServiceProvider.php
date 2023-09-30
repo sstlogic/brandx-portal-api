@@ -24,19 +24,57 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function register()
     {
+        // $this->app->instance(
+        //     LoginResponse::class,
+        //     new class implements LoginResponse
+        //     {
+        //         public function toResponse($request): UserResource
+        //         {
+        //             return new UserResource($request->user());
+        //         }
+        //     }
+        // );
         $this->app->instance(
             LoginResponse::class,
-            new class implements LoginResponse {
-                public function toResponse($request): UserResource
+            new class implements LoginResponse
+            {
+                public function toResponse($request)
                 {
-                    return new UserResource($request->user());
+                    $user = $request->user();
+                    $token = $user->createToken('MyToken')->plainTextToken;
+                    $userResource =  new UserResource($user);
+
+                    $userResource = $userResource->toArray($request);
+
+                    // return new UserResource($user);
+                    return response()->json(
+                        ["data" => [
+                            'token' => $token,
+                            'uuid' => $userResource['uuid'],
+                            'firstName' => $userResource["firstName"],
+                            'lastName' => $userResource['lastName'],
+                            'email' => $userResource['email'],
+                            'phone' => $userResource['phone'],
+                            'member' => $userResource['member'],
+                            'memberSince' => $userResource['memberSince'],
+                            'memberExpiry' => $userResource['memberExpiry'],
+                            'memberRenewal' => $userResource['memberRenewal'],
+                            'autoRenew' => !$userResource['autoRenew'],
+                            'last4' => $userResource['last4'],
+                            'existingMember' => $userResource['existingMember'],
+                            'organisation' => $userResource['organisation'],
+                            'customAttributes' => $userResource['customAttributes'],
+                        ]],
+                    );
                 }
             }
         );
 
+
         $this->app->singleton(
             FailedPasswordResetLinkRequestResponse::class,
-            fn () => new class implements FailedPasswordResetLinkRequestResponse {
+            fn () => new class implements FailedPasswordResetLinkRequestResponse
+            {
                 public function toResponse($request)
                 {
                     return response('', 200);
@@ -78,7 +116,8 @@ class FortifyServiceProvider extends ServiceProvider
             $user = $this->findOrCreateUser($bookedUser);
 
             $this->updateUser($bookedUser, $user);
-
+            $token = $user->createToken($user->id)->plainTextToken;
+            $user['token'] = $token;
             return $user;
         }
 
@@ -89,9 +128,11 @@ class FortifyServiceProvider extends ServiceProvider
     {
         $user = User::where('email', $bookedUser->emailAddress)->first();
 
-        if (! $user) {
+        if (!$user) {
             $user = $this->createUser($bookedUser);
         }
+
+
 
         return $user;
     }

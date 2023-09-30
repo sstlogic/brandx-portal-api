@@ -24,9 +24,9 @@ class SubscriptionService
             if ($account_type == "Arts_Organisation") {
                 return $this->organisation()['price'];
             }
-            if ($account_type == "Artist") {
-                return $this->individual()['price'];
-            }
+            // if ($account_type == "Artist") {
+            //     return $this->individual()['price'];
+            // }
 
             return $this->individual()['price'];
         } catch (\Throwable $th) {
