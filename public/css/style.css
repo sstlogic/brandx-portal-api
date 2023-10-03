@@ -1,0 +1,391 @@
+.element-new-pass-email {
+    width: 1082px;
+    height: 2839px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.element-new-pass-email .overlap {
+    position: relative;
+    height: 3121px;
+    top: -2px;
+}
+
+.element-new-pass-email .text {
+    position: absolute;
+    top: 584px;
+    left: 44px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.element-new-pass-email .line {
+    position: absolute;
+    width: 25px;
+    height: 27px;
+    top: 132px;
+    left: 58px;
+}
+
+.element-new-pass-email .rectangle {
+    position: absolute;
+    width: 1082px;
+    height: 3121px;
+    top: 0;
+    left: 0;
+    background-color: #eef2f6;
+}
+
+.element-new-pass-email .div {
+    position: absolute;
+    width: 867px;
+    height: 2546px;
+    top: 159px;
+    left: 118px;
+    background-color: #fbfbfb;
+}
+
+.element-new-pass-email .text-wrapper {
+    position: absolute;
+    top: 2734px;
+    left: 354px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #979797;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.element-new-pass-email .text-wrapper-2 {
+    position: absolute;
+    width: 616px;
+    top: 192px;
+    left: 169px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #231f20;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .hi-USER-FIRST-NAME {
+    position: absolute;
+    width: 765px;
+    top: 277px;
+    left: 169px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .image {
+    position: absolute;
+    width: 291px;
+    height: 70px;
+    top: 54px;
+    left: 396px;
+    object-fit: cover;
+}
+
+.element-new-pass-email .rectangle-2 {
+    position: absolute;
+    width: 572px;
+    height: 298px;
+    top: 439px;
+    left: 266px;
+    background-color: #f4e44c;
+    border-radius: 50px;
+}
+
+.element-new-pass-email .brand-x-artistpass {
+    position: absolute;
+    width: 237px;
+    height: 192px;
+    top: 499px;
+    left: 337px;
+    object-fit: cover;
+}
+
+.element-new-pass-email .rectangle-3 {
+    position: absolute;
+    width: 775px;
+    height: 203px;
+    top: 1275px;
+    left: 153px;
+    background-color: #f4e34c4f;
+}
+
+.element-new-pass-email .important-when {
+    position: absolute;
+    width: 697px;
+    top: 1286px;
+    left: 199px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #404952;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .span {
+    font-weight: 700;
+}
+
+.element-new-pass-email .text-wrapper-3 {
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #404952;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.element-new-pass-email .text-wrapper-4 {
+    position: absolute;
+    width: 616px;
+    top: 785px;
+    left: 156px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #231f20;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .your-artist-pass {
+    position: absolute;
+    width: 749px;
+    top: 853px;
+    left: 156px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .group {
+    position: absolute;
+    width: 420px;
+    height: 63px;
+    top: 1507px;
+    left: 156px;
+}
+
+.element-new-pass-email .overlap-group {
+    position: relative;
+    width: 418px;
+    height: 63px;
+    background-color: #333333;
+}
+
+.element-new-pass-email .text-wrapper-5 {
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #f4e44c;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.element-new-pass-email .group-2 {
+    position: absolute;
+    width: 772px;
+    height: 1039px;
+    top: 1614px;
+    left: 153px;
+}
+
+.element-new-pass-email .thanks-the-brand-x {
+    position: absolute;
+    top: 983px;
+    left: 0;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .please-note-that {
+    position: absolute;
+    width: 749px;
+    top: 784px;
+    left: 0;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .text-wrapper-6 {
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.element-new-pass-email .text-wrapper-7 {
+    text-decoration: underline;
+}
+
+.element-new-pass-email .group-3 {
+    position: absolute;
+    width: 771px;
+    height: 369px;
+    top: 0;
+    left: 3px;
+}
+
+.element-new-pass-email .p {
+    position: absolute;
+    width: 616px;
+    top: 0;
+    left: 0;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #231f20;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .div-wrapper {
+    position: absolute;
+    width: 458px;
+    height: 63px;
+    top: 306px;
+    left: 3px;
+    background-color: #231f20;
+}
+
+.element-new-pass-email .artist-pass {
+    position: absolute;
+    width: 765px;
+    top: 70px;
+    left: 0;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .group-4 {
+    position: absolute;
+    width: 773px;
+    height: 317px;
+    top: 408px;
+    left: 3px;
+}
+
+.element-new-pass-email .text-wrapper-8 {
+    position: absolute;
+    width: 743px;
+    top: 0;
+    left: 3px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #231f20;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .overlap-2 {
+    position: absolute;
+    width: 315px;
+    height: 63px;
+    top: 254px;
+    left: 0;
+    background-color: #231f20;
+}
+
+.element-new-pass-email .overlap-3 {
+    position: absolute;
+    width: 390px;
+    height: 63px;
+    top: 254px;
+    left: 338px;
+    background-color: #231f20;
+}
+
+.element-new-pass-email .text-wrapper-9 {
+    position: absolute;
+    top: 10px;
+    left: 31px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #f4e44c;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.element-new-pass-email .join-industry {
+    position: absolute;
+    width: 765px;
+    top: 74px;
+    left: 0;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #231f20;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .flexcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: absolute;
+    width: 142px;
+    height: 91px;
+    top: 605px;
+    left: 649px;
+}
+
+.element-new-pass-email .span-wrapper {
+    position: relative;
+    align-self: stretch;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.element-new-pass-email .text-wrapper-10 {
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+}

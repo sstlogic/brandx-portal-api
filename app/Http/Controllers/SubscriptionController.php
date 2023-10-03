@@ -27,7 +27,7 @@ class SubscriptionController extends Controller
         $sub = $user->newSubscription('default', $service->getPrice($user))
             ->create($request->input('paymentMethodId'));
 
-        // Mail::to($user)->send(new NewArtistPassMail($user));
+        Mail::to($user)->send(new NewArtistPassMail($user));
 
         return new JsonResponse([
             'reference' => $sub->latestInvoice()?->number,

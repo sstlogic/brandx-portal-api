@@ -17,3 +17,7 @@ Route::get('/', function () {
     return response('', 200);
 });
 
+Route::get('/email-update', function () {
+
+    return view('emails.user-updated-new');
+});

@@ -15,10 +15,19 @@ class UserUpdatedMail extends Mailable implements ShouldQueue
 
     public function __construct(
         public User $user
-    ) {}
+    ) {
+    }
 
     public function build()
     {
+        // return $this
+        //     ->subject('Brand X Profile Updated')
+        //     ->view('emails.user-updated-new')
+        //     ->with([
+        //         'user' => $this->user,
+        //         'url' => config('brandx.frontend_url') . '/login',
+        //     ]);
+
         return $this
             ->with([
                 'user' => $this->user,
