@@ -15,23 +15,17 @@ return [
         //     'price' => 6600,
         // ],
     ],
-    // 'account_type' => [
-    //         Artist
-    //     'artist-pass_individual' => [
-    //         'price_id' => env("STRIPE_INDIVIDUAL_PRICE"),
-    //         'price' => 2400,
-    //     ],
-    // Arts_Organisation
-    //     'artist-pass_organisation' => [
-    //         'price_id' => env('STRIPE_ORGANISATION_PRICE'),
-    //         'price' => 3300,
-    //     ],
-    // General_Public
-    //     'artist-pass_general_public' => [
-    //         'price_id' => env('STRIPE_GENERAL_PUBLIC_PRICE'),
-    //         'price' => 6600,
-    //     ],
-    // ],
+    'account_type' => [
+        'Individual' => [
+            'rate' => 24,
+        ],
+        'Arts_Organisation' => [
+            'rate' => 33,
+        ],
+        'General_Public' => [
+            'rate' => 66,
+        ],
+    ],
     'prices' => [
         'solo' => [
             'hourly' => 1700,

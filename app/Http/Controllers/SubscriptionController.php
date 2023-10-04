@@ -18,7 +18,7 @@ class SubscriptionController extends Controller
         //
     }
 
-    public function store(Request $request, SubscriptionService $service)
+    public function store(Request $request, SubscriptionService $service, UserRepository $repository)
     {
         $user = $request->user();
 
@@ -27,12 +27,25 @@ class SubscriptionController extends Controller
         $sub = $user->newSubscription('default', $service->getPrice($user))
             ->create($request->input('paymentMethodId'));
 
-        Mail::to($user)->send(new NewArtistPassMail($user));
+        $bookedUser = $repository->find($user->external_id);
+        $userAttribute = new BookedUserResource($bookedUser);
+        $rate = $service->getRate($user, $userAttribute);
+        $saving = 66 - $rate;
+        $otherDetails = [
+            'rate' => $rate,
+            'saving' => number_format($saving, 2),
+            'company_name' => $userAttribute->organisationName(),
+            'join_date' => $user->created_at->format('d/m/Y'),
+            'expiry_date' => $user->memberExpiry()?->format('d/m/Y'),
+        ];
+
+        Mail::to($user)->send(new NewArtistPassMail($user, $otherDetails));
 
         return new JsonResponse([
             'reference' => $sub->latestInvoice()?->number,
             'memberExpiry' => $user->memberExpiry()?->format('c'),
             'nextBill' => $user->memberExpiry()?->format('c'),
+            'user' => $user,
         ], 201);
     }
 

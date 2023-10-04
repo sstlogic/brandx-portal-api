@@ -59,7 +59,9 @@ class UpdateUserAction extends BaseAction
             'organisation' => (bool) $user->organization,
         ]);
 
-        // Mail::to($this->user->email)->send(new UserUpdatedMail($this->user));
+        if ($this->data->get('update_type') == 'profile') {
+            Mail::to($this->user->email)->send(new UserUpdatedMail($this->user));
+        }
 
         return $user;
     }

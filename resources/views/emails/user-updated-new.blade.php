@@ -155,16 +155,17 @@
                     <div style="float: left; width: 50%; padding-top:100px;">
                         <span
                             style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
-                            {{ '<Company Name>' }}<br />
+                            {{ $otherDetails['company_name'] }}<br />
                         </span>
                         <span
                             style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word">Arts
                             Organisation <br />
                         </span>
                         <span
-                            style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">Joined:
-                            10/07/2023<br />
-                            Expiry: 09/07/2024
+                            style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
+                            Joined: {{ $otherDetails['join_date'] }}
+                            <br />
+                            Expiry: {{ $otherDetails['expiry_date'] }}
                         </span>
                     </div>
                     <div class="clearfix"></div>
@@ -178,9 +179,9 @@
                 Book a space
             </div>
             <div class="sub-title-section">
-                Your Artist Pass enables you to book spaces starting *from {{ '<PRICE>' }}. This is a
-                {{ '<PERCENT>' }}
-                discount from our base rate of $66 per hour.
+                Your Artist Pass enables you to book spaces starting *from {{ $otherDetails['rate'] }}.
+                This is a ${{ $otherDetails['saving'] }}
+                discount from our base rate of $66.00 per hour.
                 <br />
                 <br />
 

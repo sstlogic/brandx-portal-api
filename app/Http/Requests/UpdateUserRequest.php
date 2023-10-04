@@ -33,6 +33,7 @@ class UpdateUserRequest extends FormRequest
             'role_in_org' => ['string', 'nullable'],
             'accurate' => ['string', 'nullable'],
             'website' => ['string', 'nullable'],
+            'update_type' => ['string', 'nullable'],
             // 'artform' => ['required', 'string', 'nullable'],
             // 'address' => ['required', 'string'],
             // 'suburb' => ['required', 'string'],
