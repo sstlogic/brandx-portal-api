@@ -101,18 +101,13 @@
         .box-title {
             background: #333;
             display: inline-block;
-            /* Allows the container to expand based on content */
             padding: 10px 20px;
-            /* Add padding for spacing around the text */
             color: #fff;
-            /* Text color */
             border: none;
-            /* Remove border */
             cursor: pointer;
-            /* Add cursor pointer on hover */
             color: #F4E44C;
             font-family: Roboto;
-            font-size: 36px;
+            font-size: 24px;
             font-style: normal;
             font-weight: 900;
             line-height: normal;
@@ -215,7 +210,10 @@
             <br />
             <br />
             <div class="box-title">
-                View booking calendar
+                <a href="https://bookings.brandx.org.au/book-space" target="_blank"
+                    style="color: #F4E44C !important;text-decoration: none;">
+                    View booking calendar
+                </a>
             </div>
             <br />
             <br />
@@ -235,7 +233,10 @@
             <br />
             <br />
             <div class="box-title">
-                Check out the Flying Nun
+                <a href="https://www.brandx.org.au/Pages/Events/Category/the-flying-nun-on-demand" target="_blank"
+                    style="color: #F4E44C !important;text-decoration: none;">
+                    Check out the Flying Nun
+                </a>
             </div>
             <br />
             <br />
@@ -254,10 +255,16 @@
             </div>
             <br />
             <div class="box-title" style="flex: left;">
-                A-2-A in person
+                <a href="https://www.brandx.org.au/Pages/Events/Category/skill-up-a2a-in-person" target="_blank"
+                    style="color: #F4E44C !important;text-decoration: none;">
+                    A-2-A in person
+                </a>
             </div>
             <div class="box-title " style="flex: left; margin-left:20px">
-                A-2-A in on demand
+                <a href="https://www.brandx.org.au/Pages/Events/Category/artist-2-artist-program-on-demand"
+                    style="color: #F4E44C !important;text-decoration: none;" target="_blank">
+                    A-2-A on demand
+                </a>
             </div>
             <div class="clearfix"></div>
             <br />

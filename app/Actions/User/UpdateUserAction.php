@@ -6,9 +6,12 @@ use App\Actions\BaseAction;
 use App\Booked\Models\BookedUser;
 use App\Booked\Repositories\AttributeRepository;
 use App\Booked\Repositories\UserRepository;
+use App\Mail\NewRegistrationMail;
 use App\Mail\UserUpdatedMail;
 use App\Models\User;
+use Arr;
 use Mail;
+use Mockery\Undefined;
 
 class UpdateUserAction extends BaseAction
 {
@@ -27,6 +30,8 @@ class UpdateUserAction extends BaseAction
 
         return $this->updateBookedUser();
     }
+
+
 
     private function updateBookedUser(): ?BookedUser
     {
@@ -63,28 +68,70 @@ class UpdateUserAction extends BaseAction
             Mail::to($this->user->email)->send(new UserUpdatedMail($this->user));
         }
 
+        if ($this->data->get('account_type') == "General_Public") {
+            Mail::to($this->user->email)->send(new NewRegistrationMail($this->user));
+        }
+
         return $user;
     }
 
     private function attributes(): array
     {
-        $attributes = [
-            'art_form' => $this->data->get('artform'),
-            'address' => $this->data->get('address'),
-            'suburb' => $this->data->get('suburb'),
-            'state' => $this->data->get('state'),
-            'postcode' => $this->data->get('postcode'),
-            'org_type' => $this->data->get('organisation_type'),
-            'org_abn' => $this->data->get('organisation_abn'),
-            'insurance' => $this->data->get('insurance'),
-            'country' => $this->data->get('country'),
-            'wk_ph' => $this->data->get('wk_ph'),
-            'account_type' =>  $this->data->get('account_type'),
-            'promo' =>  $this->data->get('promo'),
-            'role_in_org' =>  $this->data->get('role_in_org'),
-            'accurate' =>  $this->data->get('accurate'),
-            'website' =>  $this->data->get('website'),
-        ];
+        $attributes = [];
+        if ($this->data->get('artform')) {
+            $attributes['art_form'] = $this->data->get('artform');
+        }
+        if ($this->data->get('address')) {
+            $attributes['address'] = $this->data->get('address');
+        }
+        if ($this->data->get('suburb')) {
+            $attributes['suburb'] = $this->data->get('suburb');
+        }
+        if ($this->data->get('state')) {
+            $attributes['state'] = $this->data->get('state');
+        }
+        if ($this->data->get('postcode')) {
+            $attributes['postcode'] = $this->data->get('postcode');
+        }
+        if ($this->data->get('organisation_type')) {
+            $attributes['org_type'] = $this->data->get('organisation_type');
+        }
+        if ($this->data->get('organisation_abn')) {
+            $attributes['org_abn'] = $this->data->get('organisation_abn');
+        }
+        if ($this->data->get('insurance')) {
+            $attributes['insurance'] = $this->data->get('insurance');
+        }
+        if ($this->data->get('country')) {
+            $attributes['country'] = $this->data->get('country');
+        }
+        if ($this->data->get('wk_ph')) {
+            $attributes['wk_ph'] = $this->data->get('wk_ph');
+        }
+        if ($this->data->get('account_type')) {
+            $attributes['account_type'] = $this->data->get('account_type');
+        }
+        if ($this->data->get('promo')) {
+            $attributes['promo'] = $this->data->get('promo');
+        }
+        if ($this->data->get('role_in_org')) {
+            $attributes['role_in_org'] = $this->data->get('role_in_org');
+        }
+        if ($this->data->get('accurate')) {
+            $attributes['accurate'] = $this->data->get('accurate');
+        }
+        if ($this->data->get('website')) {
+            $attributes['website'] = $this->data->get('website');
+        }
+        if ($this->data->get('member')) {
+            $attributes['member'] = $this->data->get('member');
+        }
+        if ($this->data->get('member_date')) {
+            $attributes['member_date'] = $this->data->get('member_date');
+        }
+        if ($this->data->get('expiry_date')) {
+            $attributes['expiry_date'] = $this->data->get('expiry_date');
+        }
 
         return collect($attributes)->map(function ($attribute, $key) {
             return [
