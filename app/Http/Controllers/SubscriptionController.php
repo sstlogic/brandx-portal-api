@@ -39,8 +39,8 @@ class SubscriptionController extends Controller
             "userName" => $userAttribute['email'],
             "phone" => $userAttribute['phone'],
             "member" => "Yes",
-            "expiry_date" => $user->memberExpiry()?->format('d/m/Y'),
-            "member_date" => $sub->created_at->format('d/m/Y'),
+            "expiry_date" => $user->memberExpiry()?->format('c'),
+            "member_date" => $sub->created_at->format('c'),
             "artform" => $userAttribute['artform'],
             "address" => $userAttribute['address'],
             "suburb" => $userAttribute['suburb'],
@@ -64,7 +64,9 @@ class SubscriptionController extends Controller
 
 
         $rate = $service->getRate($user, $userAttribute);
-        $saving = 66 - $rate;
+        // $saving = 66 - $rate;
+        // get saving percentage
+        $saving = 100 - ($rate / 66 * 100);
         $otherDetails = [
             'rate' => $rate,
             'saving' => number_format($saving, 2),

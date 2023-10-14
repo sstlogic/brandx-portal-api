@@ -174,25 +174,29 @@
                 Book a space
             </div>
             <div class="sub-title-section">
-                Your Artist Pass enables you to book spaces starting *from {{ $otherDetails['rate'] }}.
-                This is a ${{ $otherDetails['saving'] }}
-                discount from our base rate of $66.00 per hour.
+                Your Artist Pass enables you to book spaces starting from {{ $otherDetails['rate'] }}.
+                A {{ $otherDetails['saving'] }}% discount from our standard rate of $66.00 per hour.
                 <br />
                 <br />
 
-                *Please note:  when using the space for a commercial activity you may be charged slightly more. This
-                enables Brand X to continue to offer the lowest rates possible for non commercial activities and
-                solo artists.
+                To make a booking please login and click <strong>BOOK A SPACE</strong> in the top right corner. You will
+                then be able to
+                book your required space and time in the Brand X booking calendar.
+
                 <br />
                 <br />
 
-                To make a booking for a studio space, login and click BOOK A SPACE (in the top right corner), to
-                view the calendar and select times to book.
+                Further discounts apply when you book 8 hours or more in one day or 40 hours or more in one week.<br />
+                For more than 8-hour bookings use discount code: <strong>8hourday</strong><br />
+                For more than 40-hour bookings use discount code: <strong>40hourweek</strong>
+
+
                 <br />
                 <br />
 
-                Further discounts apply when booking 8 hours in one day or 40 hours in one week. Use codes
-                “8hourday” and “40hourweek” respectively at the checkout.
+                *Please note: when booking a space for a commercial activity you may be charged more. This enables Brand
+                X to continue to offer the lowest rates possible to support independent artists.
+
             </div>
             <br />
 
@@ -223,12 +227,11 @@
             </div>
             <br />
             <div class="sub-title-section">
-                Artist Pass subscribers receive a $5 discount to all The Flying Nun performances at the East Sydney
-                Community and Arts Centre in Darlinghurst.
+                Artist Pass subscribers receive a $5 discount to The Flying Nun performances at the East Sydney
+                Community and Arts Centre in Darlinghurst (ESCAC).
                 <br />
                 <br />
-                To book tickets to a show, copy and paste this code into the "promo code" section when purchasing
-                tickets to claim your concession: <strong>artistpass-4567382</strong>
+                To book tickets use promo code: <strong>artistpass-4567382</strong>
             </div>
             <br />
             <br />
@@ -246,12 +249,17 @@
             </div>
             <br />
             <div class="sub-title-section">
-                Join industry professionals across Sydney as they share their knowledge and passion for their arts
-                practice.
+                Get <strong>free access</strong> to Brand X’s Artist-2-Artist professional development program, live and
+                in-person across
+                our Sydney venues. Industry professionals lead sessions to share their skills, knowledge, techniques and
+                passion around a part of their own practice, inviting participants to up-skill and grow their own
+                professional practice and network.
+
                 <br />
                 <br />
-                Valued at $25 per ticket, Artist Pass holders can access any online or in person A-2A program for free
-                with the code **artistpass-4567382**
+                Valued at $25 per ticket, Artist Pass holders can access any online or in person A2A program for free.
+                Use code: <strong>artistpass-4567382</strong>
+
             </div>
             <br />
             <div class="box-title" style="flex: left;">
@@ -273,11 +281,11 @@
                 your circumstances change at any time, please reach out and contact us at programs@brandx.org.au.
                 <br />
                 <br />
-                Look forward to seeing you in our spaces, at a show or in an A2A program.
+                Welcome to our Artist Pass Community and we look forward to seeing you soon!
             </div>
             <div class="sub-title-section">
-                Thanks,<br />
-                The Brand X Team
+                {{-- Thanks,<br /> --}}
+                Brand X Team!
             </div>
         </div>
     </div>
