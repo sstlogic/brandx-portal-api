@@ -1,18 +1,20 @@
 @component('mail::message')
-    # Brand X New Registration
+# Brand X New Registration
 
-    Hi {{ $user->first_name }},
+Hi {{ $user->first_name }},
 
-    Thank you for registering for an account with Brand X.
+Thank you for registering for an account with Brand X.
 
-    Keep this email as a reminder that your username is: {{ $user->email }}
+Keep this email as a reminder that your username is: {{ $user->email }}
 
-    Your account gives you access to 33 spaces across performing arts, music, visual art spaces in Sydney.
+Your account gives you access to 33 spaces across performing arts, music, visual art spaces in Sydney.
 
-    To book a space at Brand X visit www.brandx.org.au.
+To book a space at Brand X visit www.brandx.org.au.
 
-    Look forward to seeing you in our spaces.
-
-    Thanks,<br>
-    The Brand X Team
+Look forward to seeing you in our spaces.
+@component('mail::button', ['url' => $login, 'color' => 'black'])
+Login Now
+@endcomponent
+Thanks,<br>
+The Brand X Team
 @endcomponent

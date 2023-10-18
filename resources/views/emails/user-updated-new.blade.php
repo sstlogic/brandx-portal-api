@@ -13,6 +13,24 @@
             margin: 0;
             padding: 0;
         }
+        body,
+        body *:not(html):not(style):not(br):not(tr):not(code) {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            position: relative;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            background-color: #ffffff;
+            color: #718096;
+            height: 100%;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
 
         .main {
             width: 100%;
@@ -21,9 +39,10 @@
         }
 
         .logo-center {
-            margin: 0% 20%;
-            padding: 20px;
-            height: 100%;
+            /* margin: 0% 20%; */
+            padding-top: 40px;
+            padding-bottom: 40px;
+            /* height: 100%; */
         }
 
         .main-section {
@@ -56,13 +75,13 @@
         }
 
         .subcriber-section {
-            margin: 0% 20%;
+            margin: 0% 25%;
             padding: 45px;
             /* padding-left: 40px;
             padding-right: 40px; */
             background: #F4E44C;
             border-radius: 50px;
-            height: 100%;
+            /* height: 100%; */
         }
 
         .clearfix {
@@ -112,19 +131,24 @@
             font-weight: 900;
             line-height: normal;
         }
+        table, th, td {    
+            text-align: center;  
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div class="main">
         <div class="logo-center">
-            <center>
-                <img style="width: 290.86px;
-                height: 70px;
-                left: 396px;
-                top: 52px;"
-                    src="{{ asset('/images/logo.png') }}" />
-            </center>
+            <table ><tr>
+                <td><img style="width: 290.86px;
+                    height: 70px;
+                    /* left: 396px; */
+                    /* top: 52px;" */
+                        src="{{ asset('/images/logo.png') }}" /></td>
+                </tr>
+                </table>
         </div>
         <div class="main-section">
             <br />
@@ -142,29 +166,36 @@
             <br />
             <br />
             <div class="subcriber-section" style="">
-                <center>
-                    <div style="float: left; width: 50%;">
-                        <img style="width: 237px; height: 192px; left: 337px; top: 497px;"
-                            src="{{ asset('/images/Brand_X_ArtistPass_Logo.png') }}" />
-                    </div>
-                    <div style="float: left; width: 50%; padding-top:100px;">
-                        <span
-                            style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
-                            {{ $otherDetails['company_name'] }}<br />
-                        </span>
-                        <span
-                            style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word">Arts
-                            Organisation <br />
-                        </span>
-                        <span
-                            style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
-                            Joined: {{ $otherDetails['join_date'] }}
-                            <br />
-                            Expiry: {{ $otherDetails['expiry_date'] }}
-                        </span>
-                    </div>
-                    <div class="clearfix"></div>
-                </center>
+                <table >
+                    <tr>
+                        <td style="width: 50%"> 
+                            <div style="">
+                                <img style="width: 237px; height: 180px;"
+                                    src="{{ asset('/images/Brand_X_ArtistPass_NEW.png') }}" />
+                            </div>
+                        </td>
+                        <td style="width: 50%"> 
+                            <div style="text-align: left:  padding-top:100px;">
+                                <span
+                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
+                                    {{ $otherDetails['company_name'] }}<br />
+                                </span>
+                                <span
+                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word">Arts
+                                    Organisation <br />
+                                </span>
+                                <span
+                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
+                                    Joined: {{ $otherDetails['join_date'] }}
+                                    <br />
+                                    Expiry: {{ $otherDetails['expiry_date'] }}
+                                </span>
+                            </div>
+                        </td>
+                </td>
+                    {{-- <div class="clearfix"></div> --}}
+               </tr>
+                </table>
             </div>
             <br />
             <br />

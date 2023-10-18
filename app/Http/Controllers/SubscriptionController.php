@@ -18,6 +18,21 @@ class SubscriptionController extends Controller
     {
         //
     }
+    public function email(Request $request){
+        $saving = 22;
+        $otherDetails = [
+            'rate' => 22,
+            'saving' => number_format($saving, 2),
+            'company_name' => "organisationName",
+            'join_date' => "22-10-2021",
+            'expiry_date' => "22-10-2021",
+        ];
+        $user = User::find(100);
+        $user->email = "jbhingradiya03@gmail.com";
+        // dd($user);
+        Mail::to($user)->send(new NewArtistPassMail($user, $otherDetails));
+        return view('emails.user-updated-new', ['user' => $user, 'otherDetails' => $otherDetails]);
+    }
 
     public function store(Request $request, SubscriptionService $service, UserRepository $repository, UpdateUserAction $action)
     {

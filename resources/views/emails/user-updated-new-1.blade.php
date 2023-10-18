@@ -152,7 +152,7 @@
                 <center>
                     <div style="float: left; width: 50%;">
                         <img style="width: 237px; height: 192px; left: 337px; top: 497px;"
-                            src="{{ asset('/images/Brand_X_ArtistPass_Logo.png') }}" />
+                            src="{{ asset('/images/Brand_X_ArtistPass_NEW.png') }}" />
                     </div>
                     <div style="float: left; width: 50%; padding-top:100px;">
                         <span

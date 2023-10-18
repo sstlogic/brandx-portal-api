@@ -59,7 +59,11 @@ if (!function_exists('uuidResourceRoute')) {
         );
     }
 }
+Route::get('/email-update', [SubscriptionController::class, 'email']);
+// Route::get('/email-update', function () {
 
+//     return view('emails.user-updated-new');
+// });
 Route::middleware('auth:sanctum')->group(function () {
     Route::put('/users/{user:uuid}', [UserController::class, 'update']);
     Route::get('/user', fn (Request $request) => new UserResource($request->user()));
