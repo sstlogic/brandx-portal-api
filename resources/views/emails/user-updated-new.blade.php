@@ -131,8 +131,8 @@
             font-weight: 900;
             line-height: normal;
         }
-        table, th, td {    
-            text-align: center;  
+        table, th, td {
+            text-align: center;
             width: 100%;
         }
     </style>
@@ -165,27 +165,27 @@
             </div>
             <br />
             <br />
-            <div class="subcriber-section" style="">
+            <div class="subcriber-section" style="text-align: left !important;">
                 <table >
                     <tr>
-                        <td style="width: 50%"> 
+                        <td style="">
                             <div style="">
                                 <img style="width: 237px; height: 180px;"
                                     src="{{ asset('/images/Brand_X_ArtistPass_NEW.png') }}" />
                             </div>
                         </td>
-                        <td style="width: 50%"> 
-                            <div style="text-align: left:  padding-top:100px;">
+                        <td style="text-align: left !important; ">
+                            <div style="text-align: left !important;  padding-top:80px;">
                                 <span
-                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
+                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
                                     {{ $otherDetails['company_name'] }}<br />
                                 </span>
                                 <span
-                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word">Arts
+                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word; text-align: left !important;">Arts
                                     Organisation <br />
                                 </span>
                                 <span
-                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
+                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
                                     Joined: {{ $otherDetails['join_date'] }}
                                     <br />
                                     Expiry: {{ $otherDetails['expiry_date'] }}
