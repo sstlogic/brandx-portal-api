@@ -74,12 +74,7 @@
             line-height: normal;
         }
 
-        .subcriber-section {
-            margin: 0% 25%;
-            padding: 45px;
-            background: #F4E44C;
-            border-radius: 50px;
-        }
+
 
         .clearfix {
             content: "";
@@ -132,6 +127,13 @@
             text-align: center;
             width: 100%;
         }
+
+        .subcriber-section {
+            margin: 0% 25%;
+            padding: 45px;
+            background: #F4E44C;
+            border-radius: 50px;
+        }
         @media screen and (max-width: 900px) {
                 .subcriber-section {
                     margin: 0% 0%;
@@ -178,6 +180,33 @@
             </div>
             <br />
             <br />
+            <center>
+                <div style="padding: 25px; background: #F4E44C; border-radius: 50px; text-align: left !important;  max-width: 500px;">
+                    <table>
+                        <tr>
+                            <td style="width:60%">
+                                <img style="height: 180px;" src="{{ asset('/images/Brand_X_ArtistPass_NEW.png') }}" />
+                            </td>
+                            <td style="text-align: left !important; width:40%">
+                                <div style="text-align: left !important; padding-top:80px;">
+                                    <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
+                                        {{ $otherDetails['company_name'] }}<br />
+                                    </div>
+                                    <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word; text-align: left !important;">Arts Organisation <br />
+                                    </div>
+                                    <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
+                                        Joined: {{ $otherDetails['join_date'] }}<br />
+                                        Expiry: {{ $otherDetails['expiry_date'] }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+           </center>
+
+            {{-- <br />
+            <br />
             <div class="subcriber-section" style="text-align: left !important;">
                 <table >
                     <tr>
@@ -204,10 +233,9 @@
                             </div>
                         </td>
                 </td>
-                    {{-- <div class="clearfix"></div> --}}
                </tr>
                 </table>
-            </div>
+            </div> --}}
             <br />
             <br />
             <br />
