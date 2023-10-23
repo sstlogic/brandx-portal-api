@@ -77,11 +77,8 @@
         .subcriber-section {
             margin: 0% 25%;
             padding: 45px;
-            /* padding-left: 40px;
-            padding-right: 40px; */
             background: #F4E44C;
             border-radius: 50px;
-            /* height: 100%; */
         }
 
         .clearfix {
@@ -135,6 +132,22 @@
             text-align: center;
             width: 100%;
         }
+        @media screen and (max-width: 900px) {
+                .subcriber-section {
+                    margin: 0% 0%;
+                    padding: 25px;
+                    background: #F4E44C;
+                    border-radius: 50px;
+                }
+        }
+        @media screen and (max-width: 1200px) {
+                .subcriber-section {
+                    margin: 0% 12%;
+                    padding: 25px;
+                    background: #F4E44C;
+                    border-radius: 50px;
+                }
+        }
     </style>
 </head>
 
@@ -168,28 +181,26 @@
             <div class="subcriber-section" style="text-align: left !important;">
                 <table >
                     <tr>
-                        <td style="">
-                            <div style="">
-                                <img style="width: 237px; height: 180px;"
+                        <td style="width:60%">
+                                <img style="height: 180px;"
                                     src="{{ asset('/images/Brand_X_ArtistPass_NEW.png') }}" />
-                            </div>
                         </td>
-                        <td style="text-align: left !important; ">
+                        <td style="text-align: left !important; width:40%">
                             <div style="text-align: left !important;  padding-top:80px;">
-                                <span
+                                <div
                                     style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
                                     {{ $otherDetails['company_name'] }}<br />
-                                </span>
-                                <span
+                                </div>
+                                <div
                                     style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word; text-align: left !important;">Arts
                                     Organisation <br />
-                                </span>
-                                <span
+                                </div>
+                                <div
                                     style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
                                     Joined: {{ $otherDetails['join_date'] }}
                                     <br />
                                     Expiry: {{ $otherDetails['expiry_date'] }}
-                                </span>
+                                </div>
                             </div>
                         </td>
                 </td>
