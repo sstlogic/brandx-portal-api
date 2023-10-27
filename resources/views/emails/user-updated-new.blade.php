@@ -13,11 +13,12 @@
             margin: 0;
             padding: 0;
         }
+
         body,
         body *:not(html):not(style):not(br):not(tr):not(code) {
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
             position: relative;
         }
 
@@ -123,7 +124,10 @@
             font-weight: 900;
             line-height: normal;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             text-align: center;
             width: 100%;
         }
@@ -134,21 +138,23 @@
             background: #F4E44C;
             border-radius: 50px;
         }
+
         @media screen and (max-width: 900px) {
-                .subcriber-section {
-                    margin: 0% 0%;
-                    padding: 25px;
-                    background: #F4E44C;
-                    border-radius: 50px;
-                }
+            .subcriber-section {
+                margin: 0% 0%;
+                padding: 25px;
+                background: #F4E44C;
+                border-radius: 50px;
+            }
         }
+
         @media screen and (max-width: 1200px) {
-                .subcriber-section {
-                    margin: 0% 12%;
-                    padding: 25px;
-                    background: #F4E44C;
-                    border-radius: 50px;
-                }
+            .subcriber-section {
+                margin: 0% 12%;
+                padding: 25px;
+                background: #F4E44C;
+                border-radius: 50px;
+            }
         }
     </style>
 </head>
@@ -156,14 +162,15 @@
 <body>
     <div class="main">
         <div class="logo-center">
-            <table ><tr>
-                <td><img style="width: 290.86px;
+            <table>
+                <tr>
+                    <td><img style="width: 290.86px;
                     height: 70px;
                     /* left: 396px; */
-                    /* top: 52px;" */
-                        src="{{ asset('/images/logo.png') }}" /></td>
+                    /* top: 52px;"
+                            */ src="{{ asset('/images/logo.png') }}" /></td>
                 </tr>
-                </table>
+            </table>
         </div>
         <div class="main-section">
             <br />
@@ -181,7 +188,8 @@
             <br />
             <br />
             <center>
-                <div style="padding: 25px; background: #F4E44C; border-radius: 50px; text-align: left !important;  max-width: 500px;">
+                <div
+                    style="padding: 25px; background: #F4E44C; border-radius: 50px; text-align: left !important;  max-width: 500px;">
                     <table>
                         <tr>
                             <td style="width:60%">
@@ -189,12 +197,16 @@
                             </td>
                             <td style="text-align: left !important; width:40%">
                                 <div style="text-align: left !important; padding-top:80px;">
-                                    <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
+                                    <div
+                                        style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
                                         {{ $otherDetails['company_name'] }}<br />
                                     </div>
-                                    <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word; text-align: left !important;">Arts Organisation <br />
+                                    <div
+                                        style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word; text-align: left !important;">
+                                        Arts Organisation <br />
                                     </div>
-                                    <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
+                                    <div
+                                        style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
                                         Joined: {{ $otherDetails['join_date'] }}<br />
                                         Expiry: {{ $otherDetails['expiry_date'] }}
                                     </div>
@@ -203,39 +215,8 @@
                         </tr>
                     </table>
                 </div>
-           </center>
+            </center>
 
-            {{-- <br />
-            <br />
-            <div class="subcriber-section" style="text-align: left !important;">
-                <table >
-                    <tr>
-                        <td style="width:60%">
-                                <img style="height: 180px;"
-                                    src="{{ asset('/images/Brand_X_ArtistPass_NEW.png') }}" />
-                        </td>
-                        <td style="text-align: left !important; width:40%">
-                            <div style="text-align: left !important;  padding-top:80px;">
-                                <div
-                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
-                                    {{ $otherDetails['company_name'] }}<br />
-                                </div>
-                                <div
-                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; word-wrap: break-word; text-align: left !important;">Arts
-                                    Organisation <br />
-                                </div>
-                                <div
-                                    style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word; text-align: left !important;">
-                                    Joined: {{ $otherDetails['join_date'] }}
-                                    <br />
-                                    Expiry: {{ $otherDetails['expiry_date'] }}
-                                </div>
-                            </div>
-                        </td>
-                </td>
-               </tr>
-                </table>
-            </div> --}}
             <br />
             <br />
             <br />
@@ -244,7 +225,7 @@
                 Book a space
             </div>
             <div class="sub-title-section">
-                Your Artist Pass enables you to book spaces starting from {{ $otherDetails['rate'] }}.
+                Your Artist Pass enables you to book spaces starting from ${{ $otherDetails['rate'] }} per hour*.
                 A {{ $otherDetails['saving'] }}% discount from our standard rate of $66.00 per hour.
                 <br />
                 <br />
@@ -286,7 +267,7 @@
             <div class="box-title">
                 <a href="https://bookings.brandx.org.au/book-space" target="_blank"
                     style="color: #F4E44C !important;text-decoration: none;">
-                    View booking calendar
+                    Get Discounted Tickets to Flying Nun
                 </a>
             </div>
             <br />
